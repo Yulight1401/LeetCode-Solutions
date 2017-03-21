@@ -2,25 +2,25 @@
 var candy = function(ratings) {
     var candylist = [];
     var tail = 0;
-		var top = 0;
-		for(var i in ratings){
-			tail++
-			candylist.push(1)
-		}
-  	for(var i in ratings){
-			if( ratings[ top ] < ratings[ top+1 ] ){
-				if( candylist[top + 1] < candylist[ top ] + 1 ){
-						candylist[ top+1 ] = candylist[ top ] + 1
-				}
-			}
-			if( ratings[ tail ] < ratings[ tail-1 ] ){
-				if( candylist[ tail-1 ] < (candylist[ tail ] + 1) ){
-					candylist[ tail-1 ] = candylist[ tail ] + 1
-				}
-			}
-			top++
-			tail--
-		}
+    var top = 0;
+    for(var i in ratings){
+	tail++
+	candylist.push(1)
+    }
+    for(var i in ratings){
+	if( ratings[ top ] < ratings[ top+1 ] ){
+	  if( candylist[top + 1] < candylist[ top ] + 1 ){		
+	    candylist[ top+1 ] = candylist[ top ] + 1
+	  }
+        }
+	if( ratings[ tail ] < ratings[ tail-1 ] ){
+	  if( candylist[ tail-1 ] < (candylist[ tail ] + 1) ){
+	    candylist[ tail-1 ] = candylist[ tail ] + 1
+	  }
+	}
+	top++
+	tail--
+    }
     var num = candylist.reduce(function(sum,item){
         return sum+item;
     },0);
